@@ -1,0 +1,32 @@
+@import 'shared/helpers/constants.scss';
+@import 'shared/helpers/media.scss';
+
+.sider {
+  @apply fixed left-0 z-50 px-1 transition-all;
+  top: $headerHeight;
+  height: calc(100% - $headerHeight - $footerHeight);
+  width: $siderMinWidth;
+  min-width: $siderMinWidth;
+
+  @include for-tablet {
+    @apply hidden;
+  }
+
+  &.active {
+    width: $siderMaxWidth;
+    min-width: $siderMaxWidth;
+
+    .siderIcon {
+      @apply ml-auto mr-5;
+    }
+  }
+
+  &Button {
+    height: $footerHeight;
+    @apply bg-white;
+  }
+
+  &Icon {
+    @apply transition-all w-8 m-auto cursor-pointer;
+  }
+}

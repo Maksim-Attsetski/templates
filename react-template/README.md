@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+## Study Frontend application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## This application is React js project.
 
-## Available Scripts
+## Hierarchy
 
-In the project directory, you can run:
+- .eslintrc.json - file with codestyles configuration
+- .gitignore - list of files ignored by git
+- package.json - the main project configuration with all dependencies, scripts and pathes
+- README.md - project description
+- tailwind.config.js - file with tailwind configuration (for comfortable use SASS)
+- tsconfig.json - file with typescript configuration
 
-### `npm start`
+- src - directory with all project files
+  - src/assets - directory with all images, icons, lottie-files and etc...
+  - src/hooks - directory with custom hooks for easy work
+  - src/navigation - directory with main navigation file and routes
+  - src/pages - directory with pages
+  - src/UI - directory with all custom UI components
+  - src/widgets - directory with separated modules
+  - src/shared - directory with shared modules
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## What does the `widgets` folder contain?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- for example i'll use `Course` folder
+  - `components` — folder with all components, which are needed for `Course page`;
+  - `service.ts` — all CRUD requests to backend for `Course`;
+  - `state.ts` — reducer and actions for `Course`;
+  - `types.ts` — types for describe `Course` data
 
-### `npm test`
+## How do I get set up it locally mode?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Install all dependencies via `npm i`
+- Run the project via `npm start`
 
-### `npm run build`
+## Development flow
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- as a global state manager i decide to use `Redux/toolkit`
+- as a request library i use `axios`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How do i interact with the server?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- firstly i create class with static methods, where i write all functions that i need.
+- then i create redux state (slice), where i will store and edit the data that comes from the server.
+- then i create custom hook to connect redux and requests to the server.
+  - Here i'll call all methods from the class (1 point) and write the data into redux.
+- finally i return all CRUD functions and redux state from custom hook for comfortable development.

@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ant-btn-primary {
+  background-color: #1677ff;
+  color: white;
+}
+:where(.css-dev-only-do-not-override-k83k30).ant-collapse
+  .ant-collapse-content
+  > .ant-collapse-content-box {
+  padding: 8px;
+}
+
+span[role="img"] {
+  vertical-align: 1px;
+}
+
+:focus {
+  outline: none;
+}
+
+.container {
+  max-width: clamp(300px, 90vw, 1240px);
+  margin: 0 auto;
+}
+
+.ant-image-mask {
+  @apply rounded-xl;
+}
